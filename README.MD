@@ -128,3 +128,43 @@ dotnet ef migrations add "first schema"
 dotnet ef database update
 ```
 
+## Add Hello EF
+
+```
+public static void Main(string[] args)
+{
+    Console.WriteLine("Hello World!");
+
+    using(var db = new TodoDbContext())
+    {
+        
+        db.Todos.Add(new ToDo(){ IsDone = false,Text = "First Commit"});
+        
+        db.SaveChanges();
+
+        foreach (var item in db.Todos)
+        {
+            Console.WriteLine($"[{item.Id}] {item.Text} : {item.IsDone}");
+        }
+
+    }
+
+}
+```
+
+## Run dotnet
+
+```
+dotnet run
+```
+
+results
+
+```
+Project console-ef (.NETCoreApp,Version=v1.0) was previously compiled. Skipping compilation.
+Hello World!
+[1] First Commit : False
+```
+
+
+
