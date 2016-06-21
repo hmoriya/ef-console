@@ -19,7 +19,8 @@ namespace ConsoleApplication
 
                 foreach (var item in db.Todos)
                 {
-                    System.Console.WriteLine("[{0}] {2} : Done {1}",item.Id.ToString(),item.IsDone,item.Text);
+                    //Console.WriteLine("[{0}] {2} : Done {1}",item.Id.ToString(),item.IsDone,item.Text);
+                    Console.WriteLine($"[{item.Id}] {item.Text} : {item.IsDone}");
                 }
 
             }
