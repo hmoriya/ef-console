@@ -8,7 +8,7 @@ namespace ConsoleApplication
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello EF Core /w sqlite3 !");
 
             using(var db = new TodoDbContext())
             {
