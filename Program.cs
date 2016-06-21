@@ -10,6 +10,20 @@ namespace ConsoleApplication
         {
             Console.WriteLine("Hello World!");
 
+            using(var db = new TodoDbContext())
+            {
+                
+                db.Todos.Add(new ToDo(){ IsDone = false,Text = "First Commit"});
+                
+                db.SaveChanges();
+
+                foreach (var item in db.Todos)
+                {
+                    System.Console.WriteLine("[{0}] {2} : Done {1}",item.Id.ToString(),item.IsDone,item.Text);
+                }
+
+            }
+
         }
     }
     public class TodoDbContext : DbContext

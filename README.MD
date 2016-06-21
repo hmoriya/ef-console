@@ -64,7 +64,7 @@ add tools section for "dotnet ef command"
     }
   }
 ```
-[project.json]
+finally [project.json]
 ```
 {
   "version": "1.0.0-*",
@@ -104,22 +104,20 @@ add tools section for "dotnet ef command"
 ## Create Model class
 
 ```
-public class TodoDbContext : DbContext
+public class TodoDbContext : DbContext{
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Filename=./Todo.db");
-        }
-        public DbSet<ToDo> Todos { get; set; }
+        optionsBuilder.UseSqlite("Filename=./Todo.db");
     }
-    [Table("Todos")]
-    public class ToDo
-    {
-        public int Id { get; set; }
-        public bool IsDone { get; set; }
-        public string Text { get; set; }
-    }
+    public DbSet<ToDo> Todos { get; set; }
 }
+[Table("Todos")]
+public class ToDo {
+    public int Id { get; set; }
+    public bool IsDone { get; set; }
+    public string Text { get; set; }
+}
+
 ```
 
 
