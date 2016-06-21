@@ -8,6 +8,7 @@
       "type": "platform",
       "version": "1.0.0-rc2-*"
     },
+    "Microsoft.EntityFrameworkCore.InMemory": "1.0.0-rc2-*",
     "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0-rc2-*",
     "Microsoft.EntityFrameworkCore.Tools": {
       "version": "1.0.0-preview1-*",
