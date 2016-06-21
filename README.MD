@@ -23,7 +23,7 @@ dotnet run
   }
 ```
 
-ompatible error message
+compatible error message
 ```
 Errors in /Users/hmoriya/Develop/github/hmoriya/console-ef/project.json
     Package Ix-Async 1.2.5 is not compatible with netcoreapp1.0 (.NETCoreApp,Version=v1.0). Package Ix-Async 1.2.5 supports:
@@ -49,5 +49,84 @@ update frmework section
       ]
     }
   }
+```
+
+add tools section for "dotnet ef command"
+
+```
+"tools": {
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview1-*",
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  }
+```
+[project.json]
+```
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0-rc2-*"
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0-rc2-*",
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview1-*",
+      "type": "build"
+    }
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  },
+  "tools": {
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview1-*",
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  }
+}
+```
+## Create Model class
+
+```
+public class TodoDbContext : DbContext
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=./Todo.db");
+        }
+        public DbSet<ToDo> Todos { get; set; }
+    }
+    [Table("Todos")]
+    public class ToDo
+    {
+        public int Id { get; set; }
+        public bool IsDone { get; set; }
+        public string Text { get; set; }
+    }
+}
+```
+
+
+## Dotnet EF command
+
+```
+dotnet ef migrations add "first schema"
+dotnet ef database update
 ```
 
