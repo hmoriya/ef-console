@@ -167,14 +167,14 @@ Hello World!
 ```
 
 
-## Run Unite Test
+## Run Unit Test
 
-add dependency for unit test
+add dependency for unit test in project json
 ```
 "NUnit": "3.2.1",
 "dotnet-test-nunit": "3.4.0-alpha-2"
 ```
-add runner setting
+add runner setting in project.json
 ```
   "testRunner": "nunit",
 ```
