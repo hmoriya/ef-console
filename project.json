@@ -13,8 +13,11 @@
     "Microsoft.EntityFrameworkCore.Tools": {
       "version": "1.0.0-preview1-*",
       "type": "build"
-    }
+    },
+    "NUnit": "3.2.1",
+    "dotnet-test-nunit": "3.4.0-alpha-2"
   },
+  "testRunner": "nunit",
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [

@@ -3,6 +3,24 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
+      "dotnet-test-nunit/3.4.0-alpha-2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyModel": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Testing.Abstractions": "1.0.0-preview1-002702",
+          "Microsoft.NETCore.App": "1.0.0-rc2-3002702",
+          "NETStandard.Library": "1.5.0-rc2-24027",
+          "NUnit.Portable.Agent": "3.4.0-alpha-2",
+          "System.ObjectModel": "4.0.12-rc2-24027",
+          "System.Runtime.Loader": "4.0.0-rc2-24027"
+        },
+        "compile": {
+          "lib/netstandard1.5/dotnet-test-nunit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/dotnet-test-nunit.dll": {}
+        }
+      },
       "Ix-Async/1.2.5": {
         "type": "package",
         "compile": {
@@ -211,6 +229,44 @@
           "runtimes/win7-x86/native/sqlite3.dll": {
             "assetType": "native",
             "rid": "win7-x86"
+          }
+        }
+      },
+      "Microsoft.DiaSymReader/1.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8/Microsoft.DiaSymReader.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8/Microsoft.DiaSymReader.dll": {}
+        }
+      },
+      "Microsoft.DiaSymReader.Native/1.3.3": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/win-x64/native/Microsoft.DiaSymReader.Native.amd64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/Microsoft.DiaSymReader.Native.x86.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win/native/Microsoft.DiaSymReader.Native.amd64.dll": {
+            "assetType": "native",
+            "rid": "win"
+          },
+          "runtimes/win/native/Microsoft.DiaSymReader.Native.arm.dll": {
+            "assetType": "native",
+            "rid": "win"
+          },
+          "runtimes/win/native/Microsoft.DiaSymReader.Native.x86.dll": {
+            "assetType": "native",
+            "rid": "win"
+          },
+          "runtimes/win8-arm/native/Microsoft.DiaSymReader.Native.arm.dll": {
+            "assetType": "native",
+            "rid": "win8-arm"
           }
         }
       },
@@ -493,7 +549,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.DependencyModel/1.0.0-rc2-002702": {
+      "Microsoft.Extensions.DependencyModel/1.0.0-rc2-final": {
         "type": "package",
         "dependencies": {
           "Microsoft.DotNet.InternalAbstractions": "1.0.0-rc2-002702",
@@ -611,6 +667,23 @@
         },
         "runtime": {
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Testing.Abstractions/1.0.0-preview1-002702": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.DiaSymReader": "1.0.6",
+          "Microsoft.DiaSymReader.Native": "1.3.3",
+          "Microsoft.DotNet.ProjectModel": "1.0.0-rc2-002702",
+          "Newtonsoft.Json": "7.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
+          "System.Resources.ResourceManager": "4.0.1-rc2-24027"
+        },
+        "compile": {
+          "lib/netstandard1.5/Microsoft.Extensions.Testing.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/Microsoft.Extensions.Testing.Abstractions.dll": {}
         }
       },
       "Microsoft.NETCore.App/1.0.0-rc2-3002702": {
@@ -1019,6 +1092,39 @@
         },
         "runtime": {
           "lib/netstandard1.0/NuGet.Versioning.dll": {}
+        }
+      },
+      "NUnit/3.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/nunit.framework.dll": {}
+        }
+      },
+      "NUnit.Portable.Agent/3.4.0-alpha-2": {
+        "type": "package",
+        "dependencies": {
+          "System.Globalization": "4.0.11-rc2-24027",
+          "System.IO.FileSystem": "4.0.1-rc2-24027",
+          "System.Linq": "4.1.0-rc2-24027",
+          "System.ObjectModel": "4.0.12-rc2-24027",
+          "System.Reflection": "4.1.0-rc2-24027",
+          "System.Reflection.Extensions": "4.0.1-rc2-24027",
+          "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
+          "System.Runtime": "4.1.0-rc2-24027",
+          "System.Runtime.Extensions": "4.1.0-rc2-24027",
+          "System.Runtime.Serialization.Primitives": "4.1.1-rc2-24027",
+          "System.Text.RegularExpressions": "4.0.12-rc2-24027",
+          "System.Threading": "4.0.11-rc2-24027",
+          "System.Xml.XDocument": "4.0.11-rc2-24027"
+        },
+        "compile": {
+          "lib/netstandard1.3/NUnit.Portable.Agent.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/NUnit.Portable.Agent.dll": {}
         }
       },
       "Remotion.Linq/2.0.2": {
@@ -2806,6 +2912,17 @@
     }
   },
   "libraries": {
+    "dotnet-test-nunit/3.4.0-alpha-2": {
+      "sha512": "P+yX18Cwk7bUBam+e3VU9MzOW1KpFWLFqsWoWWy6qvBhSHZFgw6dv4l14SdNZfgFqAD06/upL7otTZKkpFN6rg==",
+      "type": "package",
+      "files": [
+        "dotnet-test-nunit.3.4.0-alpha-2.nupkg.sha512",
+        "dotnet-test-nunit.nuspec",
+        "lib/net451/dotnet-test-nunit.exe",
+        "lib/netstandard1.5/dotnet-test-nunit.dll",
+        "lib/netstandard1.5/dotnet-test-nunit.runtimeconfig.json"
+      ]
+    },
     "Ix-Async/1.2.5": {
       "sha512": "8EXO8q7cpDUH9G2q+UOPOO/6uZ9aN7mx/4xjFIfkp+qLWVJiYuglkRhjY8Ggs2CucXzHR8GHnovJKB5yQoYaJg==",
       "type": "package",
@@ -2821,7 +2938,7 @@
       ]
     },
     "Microsoft.AspNetCore.Hosting.Abstractions/1.0.0-rc2-final": {
-      "sha512": "EZY6EF9MzSRAVJJNaMGrRDGjFXtd9x96gZY0M5J91Mn453GY+ray0SZBo9ED1uYqGqtvFg5uIiI9VBBrqZAElQ==",
+      "sha512": "byG2L2m4YxgdrZo30ustts5kdA0wh3jtAjX0y+F3aPLxQqmO99/iSA9niqUAo0XSMgjoj63uUzs96gVlX5URIQ==",
       "type": "package",
       "files": [
         "Microsoft.AspNetCore.Hosting.Abstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -2833,7 +2950,7 @@
       ]
     },
     "Microsoft.AspNetCore.Hosting.Server.Abstractions/1.0.0-rc2-final": {
-      "sha512": "PI+9VZXqhPSRk5PslkeYmjp5R38KQo0N+TTfmRFSgQ1XQQYMyOkl1BcIVSNHUIPEz0o+MmNk3OqFp5QeV1vZyg==",
+      "sha512": "rB4dFZTSu8UFqcOo/TdNKiHMe8Tb4NnNx53GrbuNJ6/TSV47n170ZLOGTQVhFR1OaX6zme6oOdMkKWLPtDGHoQ==",
       "type": "package",
       "files": [
         "Microsoft.AspNetCore.Hosting.Server.Abstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -2845,7 +2962,7 @@
       ]
     },
     "Microsoft.AspNetCore.Http.Abstractions/1.0.0-rc2-final": {
-      "sha512": "ndmI1ufOWIq7b9ntY5rX2D7GeLG1Y6yAycPdxzOnK5k9siKcEikr1dhiQpWjRIPv5EoehvkLeCuQ991rujInRw==",
+      "sha512": "2J7xH/nK5lsy8heGu5wDNKz4sRBE7v4Ev+AyllEWqLVKeqaFg+v1BBlK2cgx/kax7TsBRSLemi6OGSU2ilVNKg==",
       "type": "package",
       "files": [
         "Microsoft.AspNetCore.Http.Abstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -2857,7 +2974,7 @@
       ]
     },
     "Microsoft.AspNetCore.Http.Features/1.0.0-rc2-final": {
-      "sha512": "Wcn5RF+ZQgxHOuyb9u7H1jHSn7cTVyzKCl51xwBNd3tZAnxVSLhpwANSLGeMRd+MgIpd8rFqRhd8LCeB+BrlQA==",
+      "sha512": "Gyhaz8UYss2tn97XgwigVXfvP7Ta/ekI1Fr/hyF5VzHMzbXWrwGAN5154uwAbB/EeA4IFwegZgWWDLLNpNKWYg==",
       "type": "package",
       "files": [
         "Microsoft.AspNetCore.Http.Features.1.0.0-rc2-final.nupkg.sha512",
@@ -2985,7 +3102,7 @@
       ]
     },
     "Microsoft.Data.Sqlite/1.0.0-rc2-final": {
-      "sha512": "sgsU3uMJ5T0+0rnbADkjcKFQez7LYV8pxIoK6tBMKe37YGTQeGvLHPi1O5svT1hccu6FgJXX4GLslX5XwDZ+WA==",
+      "sha512": "VQpYVIaDSiB+PCfpz8foBjOHuEjJTtqlUAbqsnxfJPV+qqJOLlJ5onjreRqsaa7k48kh/4J/wgQcYwk04HUfzQ==",
       "type": "package",
       "files": [
         "Microsoft.Data.Sqlite.1.0.0-rc2-final.nupkg.sha512",
@@ -3003,6 +3120,33 @@
         "lib/netstandard1.3/Microsoft.Data.Sqlite.xml",
         "runtimes/win7-x64/native/sqlite3.dll",
         "runtimes/win7-x86/native/sqlite3.dll"
+      ]
+    },
+    "Microsoft.DiaSymReader/1.0.6": {
+      "sha512": "ai2eBJrXlHa0hecUKnEyacH0iXxGNOMpc9X0s7VAeqqh5TSTW70QMhTRZ0FNCtf3R/W67K4a+uf3R7MASmAjrg==",
+      "type": "package",
+      "files": [
+        "Microsoft.DiaSymReader.1.0.6.nupkg.sha512",
+        "Microsoft.DiaSymReader.nuspec",
+        "lib/net20/Microsoft.DiaSymReader.dll",
+        "lib/net20/Microsoft.DiaSymReader.xml",
+        "lib/portable-net45+win8/Microsoft.DiaSymReader.dll",
+        "lib/portable-net45+win8/Microsoft.DiaSymReader.xml"
+      ]
+    },
+    "Microsoft.DiaSymReader.Native/1.3.3": {
+      "sha512": "mjATkm+L2UlP35gO/ExNutLDfgX4iiwz1l/8sYVoeGHp5WnkEDu0NfIEsC4Oy/pCYeRw0/6SGB+kArJVNNvENQ==",
+      "type": "package",
+      "files": [
+        "Microsoft.DiaSymReader.Native.1.3.3.nupkg.sha512",
+        "Microsoft.DiaSymReader.Native.nuspec",
+        "build/Microsoft.DiaSymReader.Native.props",
+        "runtimes/win-x64/native/Microsoft.DiaSymReader.Native.amd64.dll",
+        "runtimes/win-x86/native/Microsoft.DiaSymReader.Native.x86.dll",
+        "runtimes/win/native/Microsoft.DiaSymReader.Native.amd64.dll",
+        "runtimes/win/native/Microsoft.DiaSymReader.Native.arm.dll",
+        "runtimes/win/native/Microsoft.DiaSymReader.Native.x86.dll",
+        "runtimes/win8-arm/native/Microsoft.DiaSymReader.Native.arm.dll"
       ]
     },
     "Microsoft.DotNet.Cli.Utils/1.0.0-preview1-002702": {
@@ -3036,7 +3180,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/1.0.0-rc2-final": {
-      "sha512": "i9HsjubXO6JGGGIkLe/qle2TRD+78oraaVXVQ+koGDSmdhEb/hg71jmOvZQXKqZ3bakx2eG+6U4s2CcEfbPtGw==",
+      "sha512": "Dfvod7+Sk3L01bBXsLCfdr1t0WHmEUV1tEnfs9iOxhaM3ViNI1XC5jSzzill0yVkdhnZ/u4SfsJGy1nw5r9VfQ==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.1.0.0-rc2-final.nupkg.sha512",
@@ -3050,7 +3194,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.InMemory/1.0.0-rc2-final": {
-      "sha512": "dNx+TrLTM5VlKUevS0J36L4DTaN14V3GEWlSU9y7+OnAfsz4Eq3rokR2zLm5N9VhOU3Pbqgygj45uOuqcJQgtw==",
+      "sha512": "XEcyzQ0U/i7H6kZi/UBrNGoE3KfbxZO7k9UjkVN3PhfKbLwpNL5dlV04CjB/jtqI12ZjVf6erbwaPUjTNUTEhA==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.InMemory.1.0.0-rc2-final.nupkg.sha512",
@@ -3062,7 +3206,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/1.0.0-rc2-final": {
-      "sha512": "G0rIiI8hlcYl+QXOIvtM/0Eox0wlxM30itzOQlsYAxsUe6eN5jNuI5BW9SU4QzOARiWaH9gTYnns2xXgKbV4Hw==",
+      "sha512": "YLsLZbwnlQGgTfk6OQE7hYwTCT9/4cg2D+k/ilguxizKVU9u3v4TOQW8daQcN8nas/TNoQxOyzVXYD897Y5Myw==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Relational.1.0.0-rc2-final.nupkg.sha512",
@@ -3076,7 +3220,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational.Design/1.0.0-rc2-final": {
-      "sha512": "3AcZmXbF7vIQc+l1UQ/6oiP/xTJGEZkyc8CURSXx2JLtUh5AhTnuzy/zqf5s6AgisOpkc0gDdsPiqqk+94cXhQ==",
+      "sha512": "THYJGt3xN9HEycpUpOiTn88FxP3IcGowCbPi9mK4ArAgKDXmn/LXL67YmwM50EEGxLfybxm6yzzgUGe7EY1/kg==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Relational.Design.1.0.0-rc2-final.nupkg.sha512",
@@ -3090,7 +3234,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Sqlite/1.0.0-rc2-final": {
-      "sha512": "ixxGxT4+iaEs/Se2HUFX9ACDUaFLGwxUop0PbtD2QtKF9/x3rncdNVzu8/PSucCYMEq0p82uSSMlf6EysaFrAA==",
+      "sha512": "hmMNxQWurig5oQtuV5NVG3vhcvrEDNIz++hq1R0ySuz/QxhCcZk7OK1bktr7MQda6i4udGZleTfzgBTRgf9xEQ==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Sqlite.1.0.0-rc2-final.nupkg.sha512",
@@ -3104,7 +3248,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools/1.0.0-preview1-final": {
-      "sha512": "lRQALPgYcf8c6U2xRhgCwbQ1bdcDVe4Xl6a8s1Lo8HDYBn4GVLiKJUbGdJ0hySwX+br1irOoKAG+GdL453Q2mQ==",
+      "sha512": "X+XFJwnjr+Bxf+H2ZgHlceVJf6AJDrD+MXyGpjpmdcLb8gKY33uzRIcxJNm2OI9oY3/BBecRaImHnOpjP3Zkzg==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Tools.1.0.0-preview1-final.nupkg.sha512",
@@ -3127,7 +3271,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools.Cli/1.0.0-preview1-final": {
-      "sha512": "rB+lVCt2vZ7ASHweT2ltuNMPR2xLA45WL2CGmQtrR+ZUoVB++WJLGIDQxisKRcViDA5huwpZkcXW0R0kPSlE9g==",
+      "sha512": "A7riVWzHIiobFuJezkYVHDcLOrGQTxJ/Hsq0eCNV/7mHgYG9WYcfuZgvvD3ipY7Cfh0oPLE6dk4Z+qsKSviXgg==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Tools.Cli.1.0.0-preview1-final.nupkg.sha512",
@@ -3140,7 +3284,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools.Core/1.0.0-rc2-final": {
-      "sha512": "0L30NEnJaFdbc8a+B9nLb2kkMfnz94RFvJ8JWlO1u73wRChEafB7wLozyhCJFZziEEp8IbFYTzF3omR6gDfsmA==",
+      "sha512": "RV7C+/J2A4lAffXd2XNA0q4V26dPioAuBFAUiitCxyJT2YHVVX+L8VK5YbTlI/pN+d5qpCye7Qia9pL9RGrjSQ==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Tools.Core.1.0.0-rc2-final.nupkg.sha512",
@@ -3154,7 +3298,7 @@
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/1.0.0-rc2-final": {
-      "sha512": "Seu7cdYLYDFjYGd9KgzbAa5G6Xkzw6f6mSJjWemal1qNL505ktHMSbve6IPGScipL578rPwPTVqrTWWKIvmvLg==",
+      "sha512": "VyjhKFPj47oLwI0IXL+XiPTeyB2UWT+64yd3ssVA9NoOUpke36FcejkN4Ajg1msci6BQ2+E3lwSgak9J4VrAMA==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.Caching.Abstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -3166,7 +3310,7 @@
       ]
     },
     "Microsoft.Extensions.Caching.Memory/1.0.0-rc2-final": {
-      "sha512": "G6KkTMUiChu9RaURYmNbkKc/cIvhj38jfVzoVtoSR0Aw2KzRCtJiW80xrLaNEgzl2Eu6BipCCy9DVNa7cFZhLQ==",
+      "sha512": "WmDguCDGe/mhCc0C4d4NokVbcDn3DFHUMBTaWzL6bGAiD/HIezHhffMTesMQ3QNNtJHrPShgx2cs5E4x1pPO5Q==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.Caching.Memory.1.0.0-rc2-final.nupkg.sha512",
@@ -3180,7 +3324,7 @@
       ]
     },
     "Microsoft.Extensions.CommandLineUtils/1.0.0-rc2-final": {
-      "sha512": "W27sd1qlG76lEs/TD6PUJKcJJ572v/WrMtHq8VrHKOcI7NwkTgOaayt+/Mh6Zr7a+EIAAITPOFjKjUiPDEPn+g==",
+      "sha512": "i9i6HaRzt9pwralNru1YW9dT53x3g9nWFbhkuILVj1AAgl4eoi8ui7xeqLGQp4xJpGareC95B05ssrIskZSPkg==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.CommandLineUtils.1.0.0-rc2-final.nupkg.sha512",
@@ -3192,7 +3336,7 @@
       ]
     },
     "Microsoft.Extensions.Configuration.Abstractions/1.0.0-rc2-final": {
-      "sha512": "Q871jpweVxec1zvUuK4RoXGRRXCZsp/f+6SDUSi8DQ95KcT8yKe2ZSoq2S2xnwoKFUepg2B6Yr3ToXD2v27zNA==",
+      "sha512": "V3R/6yGrJXrNSObyPizdwA4i5L4IsJ9s3wLeEY1nLEVHaItzXJQX+7lU+b7KAkPQrNT0m9Z1Yr74fcg0pHyoUg==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.Configuration.Abstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -3202,7 +3346,7 @@
       ]
     },
     "Microsoft.Extensions.DependencyInjection/1.0.0-rc2-final": {
-      "sha512": "TreRt5BDwivHosFbDpfaJ9CArhyZUHWzv9dlqZx2e0+PSbZznXRBg0QWteh+Y5gEPmJy6hANuz4ZeVK52nLKXA==",
+      "sha512": "GJs2tDEeEJkLjfMzGLxIYPq1iWOhEw+tLPp8ca85gTCG5HE+HgGqR34u1UbNdLHN2u5Z3gtQikQtHjkxUtEH7A==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.DependencyInjection.1.0.0-rc2-final.nupkg.sha512",
@@ -3214,7 +3358,7 @@
       ]
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/1.0.0-rc2-final": {
-      "sha512": "KRvRif+xioZSjml/O/Y6W/fksieNZ/hp+Bf/4Nau85gQleG8UJl+etaJXj18SWu8bQ3ApD4ikzq6qKXLlO8AMg==",
+      "sha512": "ibOgu9bHQTq2QhG1cK3jd7GdElLigecv15jIs+EpHf6jLDcdLcpH4pkLNugOLRhYohaf9fMiZIfHCFCc3gDbng==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -3225,18 +3369,18 @@
         "lib/netstandard1.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml"
       ]
     },
-    "Microsoft.Extensions.DependencyModel/1.0.0-rc2-002702": {
-      "sha512": "xLEhTaEJw+3o49TNfPJ0I4ZBPe56kIIgHYmrQo6AibTfdaIV36TyvjznIGwRc53x87xKavq88PlV4tpL+jUiJQ==",
+    "Microsoft.Extensions.DependencyModel/1.0.0-rc2-final": {
+      "sha512": "p9cTPcAxJhjBSQ1jq1FMW6bBTm/HaR3fXPvWfDq44LzjJ/+ZmNwQEGKO27oSd2C8Fw+Gf45+HZjTFkFH6Czr/A==",
       "type": "package",
       "files": [
-        "Microsoft.Extensions.DependencyModel.1.0.0-rc2-002702.nupkg.sha512",
+        "Microsoft.Extensions.DependencyModel.1.0.0-rc2-final.nupkg.sha512",
         "Microsoft.Extensions.DependencyModel.nuspec",
         "lib/net451/Microsoft.Extensions.DependencyModel.dll",
         "lib/netstandard1.5/Microsoft.Extensions.DependencyModel.dll"
       ]
     },
     "Microsoft.Extensions.FileProviders.Abstractions/1.0.0-rc2-final": {
-      "sha512": "pVcRuHzugJ1pn4LWpSJYOGXWdIMDcyj+AFIHFWUZ5CBGGXKfDCOPS0ztS5WshLYYc+9zDdAPmWSvQxVbTGljjg==",
+      "sha512": "PyEkoQSheDVIqjnBu6QWGUoDhjxB8ZCvW215O9VNWv5XQFtu8Zcw/S4no97e1dBjyejR8aJtRHrr3rNKpy0WXg==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.FileProviders.Abstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -3246,7 +3390,7 @@
       ]
     },
     "Microsoft.Extensions.Logging/1.0.0-rc2-final": {
-      "sha512": "M9lTQcaxlV2RAlyzar4s+AsTtS3KzQy78TfQImdl7s1foCMwjDerF3tYtHa4HupWAfOYUPId0b/fXNVfIZwqxw==",
+      "sha512": "4xvrIGhzTw8gmycwBhnbMFgfMEr5hvj4EOasZPk6G5dbJHOu8gnrZ67UGkVDhtKovXr0TjAsqFlaX4N/QQwlwg==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.Logging.1.0.0-rc2-final.nupkg.sha512",
@@ -3258,7 +3402,7 @@
       ]
     },
     "Microsoft.Extensions.Logging.Abstractions/1.0.0-rc2-final": {
-      "sha512": "cuBUcNmHGLqG7zT4ZpGY21w0/zQNJzfw6tz3eIEU2PNLBeA0EfV2b9LHfgrIFhn74+xmgoKhwo/0Th3d28Cubw==",
+      "sha512": "VtbfWYt9+TFZJX6VMxRi69J2FJVVe+vXxt3bt6SU/Ogdt0EqKhYNASy+mbdwqehPCVUiLkE6cdoYzYvAIAEGSw==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.Logging.Abstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -3270,7 +3414,7 @@
       ]
     },
     "Microsoft.Extensions.Options/1.0.0-rc2-final": {
-      "sha512": "Sj7WVNsiMbULRas/DGKsZ3u6GA29AFAWGZwitVFQgIf/ppzM8VfnFyCRkSnwMA0gTD4u09scnQkKyl6Yi8kNuQ==",
+      "sha512": "n7MtBzTJ0Sh0E6sT3k1AM6+xp3ciCeF14d/PWhnZFrsrjED6wZ3AsI3ga196pEWHiU4NSwN9/gAwjpK/BUR8jg==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.Options.1.0.0-rc2-final.nupkg.sha512",
@@ -3282,7 +3426,7 @@
       ]
     },
     "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc2-final": {
-      "sha512": "OjXClhPcccu39GNAs6SH6J2iC2R883Wco7LKvPqnjo1aKJQRp9vFVFVueutJFABncZO7BZINgZCwgLxVQN3yIg==",
+      "sha512": "fQSiG4u+IteQMY+D9XrQxCx96wq553EaXoANerD7mLu9+yFtgQXbiE53sSvJAldp7PfukDStz70WCanSOmPFxQ==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc2-final.nupkg.sha512",
@@ -3296,7 +3440,7 @@
       ]
     },
     "Microsoft.Extensions.Primitives/1.0.0-rc2-final": {
-      "sha512": "5lXETW9MI0CIOOCtgeJcrX3jODcFkX04tr+K/MB+cRspPvYD3URbf4MRIwWgI5r7cu+8+efPxEH0tG1g8ldhQA==",
+      "sha512": "YqrtcHUZSztQaQmHjx5b5EtlNoilU3653mWMbMJUMsFEVYf7jKa2twzika6gvR8sdqMTF7PqxMhjJePxyGadKw==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.Primitives.1.0.0-rc2-final.nupkg.sha512",
@@ -3305,6 +3449,16 @@
         "lib/netcore50/Microsoft.Extensions.Primitives.xml",
         "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll",
         "lib/netstandard1.0/Microsoft.Extensions.Primitives.xml"
+      ]
+    },
+    "Microsoft.Extensions.Testing.Abstractions/1.0.0-preview1-002702": {
+      "sha512": "NE4Efz4kvkztJ80CSifUlP0UaBP4iOOaeTVk6nrj+ZIJzhsRGLbecIe4oX8G82pkCkqFF9i8KTl7YYUwpQY5Wg==",
+      "type": "package",
+      "files": [
+        "Microsoft.Extensions.Testing.Abstractions.1.0.0-preview1-002702.nupkg.sha512",
+        "Microsoft.Extensions.Testing.Abstractions.nuspec",
+        "lib/net451/Microsoft.Extensions.Testing.Abstractions.dll",
+        "lib/netstandard1.5/Microsoft.Extensions.Testing.Abstractions.dll"
       ]
     },
     "Microsoft.NETCore.App/1.0.0-rc2-3002702": {
@@ -3518,7 +3672,7 @@
       ]
     },
     "NETStandard.Library/1.5.0-rc2-24027": {
-      "sha512": "SD27bvP2gNnlpC7HZUbnPOXS1M7VbBZoi0bdlqe5tj7weJQ2EyGDGw8mi7K1yUmeqjL6jPWBLSC28TDaLnyqwA==",
+      "sha512": "4f0PviqALhzt6cOGUFibsaXKN+Rh/lwF95LXH9sYURkGjrn28NvkbK18Zw5BXLIL2v2TqzPgaSKsKhUniNMtXA==",
       "type": "package",
       "files": [
         "NETStandard.Library.1.5.0-rc2-24027.nupkg.sha512",
@@ -3714,6 +3868,39 @@
         "lib/net45/NuGet.Versioning.xml",
         "lib/netstandard1.0/NuGet.Versioning.dll",
         "lib/netstandard1.0/NuGet.Versioning.xml"
+      ]
+    },
+    "NUnit/3.2.1": {
+      "sha512": "tBlwEclR6C6+rNSOA+vbwR0SkfLJPgF5Fm0YYNtpgfzkXhZT/rpqAWmo2Y4wn4R6ueRrUE793fR0xCJlbyAKOQ==",
+      "type": "package",
+      "files": [
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "NUnit.3.2.1.nupkg.sha512",
+        "NUnit.nuspec",
+        "lib/dotnet/nunit.framework.dll",
+        "lib/dotnet/nunit.framework.xml",
+        "lib/net20/nunit.framework.dll",
+        "lib/net20/nunit.framework.xml",
+        "lib/net35/nunit.framework.dll",
+        "lib/net35/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.xml",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.dll",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml"
+      ]
+    },
+    "NUnit.Portable.Agent/3.4.0-alpha-2": {
+      "sha512": "ntNEpo1O5quBiJtJX0I6Cg1iErAVZjDHLmFRXZnts9qoLsQpAjf6SpW3Tvybi5tRoKZhX0XvOoFLTPAnTAtMyA==",
+      "type": "package",
+      "files": [
+        "NUnit.Portable.Agent.3.4.0-alpha-2.nupkg.sha512",
+        "NUnit.Portable.Agent.nuspec",
+        "lib/net45/NUnit.Portable.Agent.dll",
+        "lib/netstandard1.3/NUnit.Portable.Agent.dll"
       ]
     },
     "Remotion.Linq/2.0.2": {
@@ -8039,7 +8226,9 @@
       "Microsoft.EntityFrameworkCore.InMemory >= 1.0.0-rc2-*",
       "Microsoft.EntityFrameworkCore.Sqlite >= 1.0.0-rc2-*",
       "Microsoft.EntityFrameworkCore.Tools >= 1.0.0-preview1-*",
-      "Microsoft.NETCore.App >= 1.0.0-rc2-*"
+      "Microsoft.NETCore.App >= 1.0.0-rc2-*",
+      "NUnit >= 3.2.1",
+      "dotnet-test-nunit >= 3.4.0-alpha-2"
     ],
     ".NETCoreApp,Version=v1.0": []
   },
