@@ -167,4 +167,7 @@ Hello World!
 ```
 
 
-
+## Run Unite Test
+```
+dotnet test
+```
