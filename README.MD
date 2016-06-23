@@ -168,6 +168,19 @@ Hello World!
 
 
 ## Run Unite Test
+
+add dependency for unit test
+```
+"NUnit": "3.2.1",
+"dotnet-test-nunit": "3.4.0-alpha-2"
+```
+add runner setting
+```
+  "testRunner": "nunit",
+```
+
+unit test run
+
 ```
 dotnet test
 ```
