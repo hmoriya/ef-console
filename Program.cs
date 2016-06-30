@@ -51,6 +51,11 @@ namespace ConsoleApplication
             {
                 repos.Add(new Todo() { IsDone = false, Text = "Added by repostitory" });
                 repos.Save();
+
+                foreach(var item in repos.ListAll()){
+                    
+                    Console.WriteLine($"[{item.Id}] {item.Text} : {item.IsDone}");
+                }
             }
 
         }
