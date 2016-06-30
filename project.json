@@ -6,12 +6,12 @@
   "dependencies": {
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0-rc2-*"
+      "version": "1.0.0"
     },
-    "Microsoft.EntityFrameworkCore.InMemory": "1.0.0-rc2-*",
-    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0-rc2-*",
+    "Microsoft.EntityFrameworkCore.InMemory": "1.0.0",
+    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
     "Microsoft.EntityFrameworkCore.Tools": {
-      "version": "1.0.0-preview1-*",
+      "version": "1.0.0-preview2-*",
       "type": "build"
     },
     "NUnit": "3.2.1",
@@ -28,7 +28,7 @@
   },
   "tools": {
     "Microsoft.EntityFrameworkCore.Tools": {
-      "version": "1.0.0-preview1-*",
+      "version": "1.0.0-preview2-*",
       "imports": [
         "dnxcore50",
         "portable-net45+win8"

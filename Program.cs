@@ -13,10 +13,11 @@ namespace ConsoleApplication
     {
 
         // TODO create new IServiceCollection and IServiceProvider.  
-        private static IServiceProvider ConfigureServices() 
+        private static IServiceProvider ConfigureServices()
         {
             var serviceCollection = new ServiceCollection()
-                                    .AddDbContext<TodoDbContext>(options => {
+                                    .AddDbContext<TodoDbContext>(options =>
+                                    {
                                         options.UseInMemoryDatabase();
                                         //options.UseSqlite("Filename=./Todo.db");
                                     });
@@ -32,22 +33,23 @@ namespace ConsoleApplication
             var provider = ConfigureServices();
 
             // TODO get DbContext instance from DIContainer.
-            using(var db = provider.GetService<TodoDbContext>())
-            {
-                db.Todos.Add(new Todo(){ IsDone = false,Text = "First Commit"});
-                
-                db.SaveChanges();
+            var db = provider.GetService<TodoDbContext>();
 
-                foreach (var item in db.Todos)
-                {
-                    Console.WriteLine($"[{item.Id}] {item.Text} : {item.IsDone}");
-                }
+
+            db.Todos.Add(new Todo() { IsDone = false, Text = "First Commit" });
+
+            db.SaveChanges();
+
+            foreach (var item in db.Todos)
+            {
+                Console.WriteLine($"[{item.Id}] {item.Text} : {item.IsDone}");
             }
 
+
             // TODO repository get by DIContainer.
-            using(var repos = provider.GetService<TodoRepository>())
+            using (var repos = provider.GetService<TodoRepository>())
             {
-                repos.Add(new Todo() {IsDone = false, Text = "Added by repostitory" });
+                repos.Add(new Todo() { IsDone = false, Text = "Added by repostitory" });
                 repos.Save();
             }
 
@@ -57,17 +59,17 @@ namespace ConsoleApplication
     public class TodoDbContext : DbContext
     {
 
-        public TodoDbContext() 
+        public TodoDbContext()
         {
         }
 
-        public TodoDbContext(DbContextOptions<TodoDbContext> options) : base(options) 
+        public TodoDbContext(DbContextOptions<TodoDbContext> options) : base(options)
         {
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured) 
+            if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlite("Filename=./Todo.db");
             }
@@ -85,7 +87,7 @@ namespace ConsoleApplication
 
     public class TodoRepository : Repository<TodoDbContext, Todo>
     {
-        public TodoRepository(TodoDbContext context) : base(context) 
+        public TodoRepository(TodoDbContext context) : base(context)
         {
         }
     }
@@ -109,7 +111,7 @@ namespace ConsoleApplication
             where TEntity : class
     {
 
-        protected Repository(TContext context) 
+        protected Repository(TContext context)
         {
             this.context = context;
             dbSet = context.Set<TEntity>();
@@ -153,9 +155,9 @@ namespace ConsoleApplication
             context.SaveChanges();
         }
 
-        public void Dispose() 
+        public void Dispose()
         {
-            if (context != null) 
+            if (context != null)
             {
                 context.Dispose();
             }
