@@ -13,11 +13,11 @@ dotnet run
 "dependencies": {
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0-rc2-*"
+      "version": "1.0.0"
     },
-    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0-rc2-*",
+    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
     "Microsoft.EntityFrameworkCore.Tools": {
-    "version": "1.0.0-preview1-*",
+    "version": "1.0.0-preview2-*",
     "type":"build"
     }
   }
@@ -56,7 +56,7 @@ add tools section for "dotnet ef command"
 ```
 "tools": {
     "Microsoft.EntityFrameworkCore.Tools": {
-      "version": "1.0.0-preview1-*",
+      "version": "1.0.0-preview2-*",
       "imports": [
         "dnxcore50",
         "portable-net45+win8"
@@ -74,11 +74,11 @@ finally [project.json]
   "dependencies": {
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0-rc2-*"
+      "version": "1.0.0"
     },
-    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0-rc2-*",
+    "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
     "Microsoft.EntityFrameworkCore.Tools": {
-      "version": "1.0.0-preview1-*",
+      "version": "1.0.0-preview2-*",
       "type": "build"
     }
   },
@@ -92,7 +92,7 @@ finally [project.json]
   },
   "tools": {
     "Microsoft.EntityFrameworkCore.Tools": {
-      "version": "1.0.0-preview1-*",
+      "version": "1.0.0-preview2-*",
       "imports": [
         "dnxcore50",
         "portable-net45+win8"
