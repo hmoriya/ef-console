@@ -6,6 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApplication
 {
+     public class TodoRepository : Repository<TodoDbContext, Todo>
+    {
+        public TodoRepository(TodoDbContext context) : base(context)
+        {
+        }
+    }
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         TEntity Find(params object[] keyValues);
