@@ -35,7 +35,6 @@ namespace ConsoleApplication
             // TODO get DbContext instance from DIContainer.
             var db = provider.GetService<TodoDbContext>();
 
-
             db.Todos.Add(new Todo() { IsDone = false, Text = "First Commit" });
 
             db.SaveChanges();
@@ -45,6 +44,7 @@ namespace ConsoleApplication
                 Console.WriteLine($"[{item.Id}] {item.Text} : {item.IsDone}");
             }
 
+            Console.WriteLine("Hello EF Core /w with Repository !");
 
             // TODO repository get by DIContainer.
             using (var repos = provider.GetService<TodoRepository>())
